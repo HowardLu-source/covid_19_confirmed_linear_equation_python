@@ -7,19 +7,16 @@ workbook1=openpyxl.load_workbook('covid_19_confirmed_time_series_used.xlsx')
 worksheet1 = workbook1.active
 for cell in worksheet1['A']:
     day_num.append(cell.value)
-print (day_num)
 
 confirmed_num=[]
 for cell in worksheet1['B']:
     confirmed_num.append(cell.value)
-print (confirmed_num)
 
 x = day_num
 y = confirmed_num
 
 
 params = numpy.polyfit(x, y, 3)
-print(params)
 param_func = numpy.poly1d(params)
 print(param_func)
 
